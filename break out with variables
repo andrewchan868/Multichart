@@ -1,0 +1,16 @@
+// for optimization 
+vars:dd(0),mp(0),button(0),gg(1.3),xx(0.4);
+dd = highest(high,200)/close-1;
+mp = marketposition;
+
+if c > average(high,100) and c[1]<average(high,100) then button = 1;
+if c > average(high,100) and c[1]<average(high,100) then value2 = close;
+
+if c < average(low,100) and c[1] > average(low,100) or dd > xx then button = 0;
+
+if button = 1 and close > value2 * gg then begin
+	if dd > 0.1 and dd[1] <= 0.1 then buy 100000/close shares next bar at market;
+	
+end;
+
+if button = 0 then sell all shares next bar at market;

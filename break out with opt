@@ -2,9 +2,9 @@
 // button 0 is selling all, button 1 is buying
 // dd for drawdown
 Inputs:
-gg(1.3),
-xx(0.4),
-dayno(50);
+gg(1.2),
+xx(0.5),
+dayno(48);
 
 vars:mp(0),button(0),dd(0);
 dd = highest(high,dayno)/close-1;

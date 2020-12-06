@@ -1,10 +1,12 @@
 // for optimization, gg and xx is rate to compare isbuy or not, if dd smaller than xx, wont sell to catch the trend, vice versa.
 // button 0 is selling all, button 1 is buying
+// dd for drawdown
 vars:dd(0),mp(0),button(0),gg(1.3),xx(0.4);
 dd = highest(high,200)/close-1;
 mp = marketposition;
 
 // harder condition to reduce commission fee and catch some noise
+// 100days average
 if c > average(high,100) and c[1]<average(high,100) then button = 1;
 if c > average(high,100) and c[1]<average(high,100) then value2 = close;
 
